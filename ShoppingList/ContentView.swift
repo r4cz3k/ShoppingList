@@ -21,16 +21,22 @@ struct ContentView: View {
                 Section(
                     header: Text("Fruits")
                 ){
-                    ForEach(fruits, id:\.self){fruit in
-                        Text(fruit.capitalized)
+                    if(fruits.count > 0){
+                        ForEach(fruits, id:\.self){fruit in
+                            Text(fruit.capitalized)
+                        }
+                        .onDelete(perform: { indexSet in
+                            listManager.removeFromList(&fruits, indexSet)
+                        })
+                        .onMove(perform: { indices, newOffset in
+                            listManager.moveInList(&fruits, indices, newOffset)
+                        })
+                    }else{
+                        Text("No items added")
                     }
-                    .onDelete(perform: { indexSet in
-                        listManager.removeFromList(&fruits, indexSet)
-                    })
-                    .onMove(perform: { indices, newOffset in
-                        listManager.moveInList(&fruits, indices, newOffset)
-                    })
                 }
+                
+                
             }
             .navigationTitle("Shopping List")
         }
