@@ -11,6 +11,7 @@
 		C13D88A72AC30EE50023141B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D88A62AC30EE50023141B /* ContentView.swift */; };
 		C13D88A92AC30EE60023141B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13D88A82AC30EE60023141B /* Assets.xcassets */; };
 		C13D88AC2AC30EE60023141B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13D88AB2AC30EE60023141B /* Preview Assets.xcassets */; };
+		C13D88B32AC30F310023141B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D88B22AC30F310023141B /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C13D88A62AC30EE50023141B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C13D88A82AC30EE60023141B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C13D88AB2AC30EE60023141B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C13D88B22AC30F310023141B /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C13D88A42AC30EE50023141B /* ShoppingListApp.swift */,
 				C13D88A62AC30EE50023141B /* ContentView.swift */,
+				C13D88B22AC30F310023141B /* DataService.swift */,
 				C13D88A82AC30EE60023141B /* Assets.xcassets */,
 				C13D88AA2AC30EE60023141B /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13D88B32AC30F310023141B /* DataService.swift in Sources */,
 				C13D88A72AC30EE50023141B /* ContentView.swift in Sources */,
 				C13D88A52AC30EE50023141B /* ShoppingListApp.swift in Sources */,
 			);
