@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isPresented: Bool = false
+    
     var body: some View {
         NavigationStack{
             ListView()
@@ -18,8 +21,11 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     Button("Add"){
-                        //functionality
+                        isPresented = true
                     }
+                    .sheet(isPresented: $isPresented, content: {
+                        //Add a sheet with text input and category selection
+                    })
                 }
             }
         }
