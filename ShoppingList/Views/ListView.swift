@@ -22,11 +22,16 @@ struct ListView: View {
     var body: some View {
         List{
             Section(
-                header: Text("Fruits")
+                header: HStack{
+                    Text("Fruits")
+                    Image(systemName: "leaf")
+                }
+                    .foregroundStyle(.green)
+                        
             ){
                 if(fruits.count > 0){
                     ForEach(fruits, id:\.self){fruit in
-                        Text(fruit.capitalized)
+                        ListRow(itemName: fruit.capitalized)
                     }
                     .onDelete(perform: { indexSet in
                         listManager.removeFromList(&fruits, indexSet)
@@ -40,11 +45,15 @@ struct ListView: View {
             }
             
             Section(
-                header: Text("Vegetables")
+                header: HStack{
+                    Text("Vegetables")
+                    Image(systemName: "carrot")
+                }
+                    .foregroundStyle(.orange)
             ){
                 if(vegetables.count > 0){
                     ForEach(vegetables, id:\.self){vege in
-                        Text(vege.capitalized)
+                        ListRow(itemName: vege.capitalized)
                     }
                     .onDelete(perform: { indexSet in
                         listManager.removeFromList(&vegetables, indexSet)
@@ -58,11 +67,15 @@ struct ListView: View {
             }
             
             Section(
-                header: Text("Hygienie")
+                header: HStack{
+                    Text("Hygiene")
+                    Image(systemName: "shower.handheld")
+                }
+                    .foregroundStyle(.blue)
             ){
                 if(hygiene.count > 0){
                     ForEach(hygiene, id:\.self){hyg in
-                        Text(hyg.capitalized)
+                        ListRow(itemName: hyg.capitalized)
                     }
                     .onDelete(perform: { indexSet in
                         listManager.removeFromList(&hygiene, indexSet)

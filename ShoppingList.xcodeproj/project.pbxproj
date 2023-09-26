@@ -14,6 +14,7 @@
 		C13D88B32AC30F310023141B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D88B22AC30F310023141B /* DataService.swift */; };
 		C13D88B52AC317B00023141B /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D88B42AC317B00023141B /* ListManager.swift */; };
 		C13D88B82AC328A40023141B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D88B72AC328A40023141B /* ListView.swift */; };
+		C13EE7F32AC358B9008921CB /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EE7F22AC358B9008921CB /* ListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		C13D88B22AC30F310023141B /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C13D88B42AC317B00023141B /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		C13D88B72AC328A40023141B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		C13EE7F22AC358B9008921CB /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				C13D88A62AC30EE50023141B /* ContentView.swift */,
 				C13D88B72AC328A40023141B /* ListView.swift */,
+				C13EE7F22AC358B9008921CB /* ListRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				C13D88B32AC30F310023141B /* DataService.swift in Sources */,
 				C13D88A72AC30EE50023141B /* ContentView.swift in Sources */,
+				C13EE7F32AC358B9008921CB /* ListRow.swift in Sources */,
 				C13D88B82AC328A40023141B /* ListView.swift in Sources */,
 				C13D88A52AC30EE50023141B /* ShoppingListApp.swift in Sources */,
 				C13D88B52AC317B00023141B /* ListManager.swift in Sources */,
