@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     let dataService = DataService()
+    let listManager = ListManager()
     @State var fruits:[String] = [String]()
     @State var vegetables:[String] = [String]()
     @State var hygiene:[String] = [String]()
@@ -24,10 +25,10 @@ struct ContentView: View {
                         Text(fruit.capitalized)
                     }
                     .onDelete(perform: { indexSet in
-                        removeFromList(&fruits, indexSet)
+                        listManager.removeFromList(&fruits, indexSet)
                     })
                     .onMove(perform: { indices, newOffset in
-                        moveInList(&fruits, indices, newOffset)
+                        listManager.moveInList(&fruits, indices, newOffset)
                     })
                 }
             }
@@ -38,14 +39,6 @@ struct ContentView: View {
             vegetables = dataService.items[1]
             hygiene = dataService.items[2]
         }
-    }
-    
-    func removeFromList(_ array: inout [String], _ indexSet: IndexSet){
-        array.remove(atOffsets: indexSet)
-    }
-    
-    func moveInList(_ array: inout [String], _ indices: IndexSet, _ newOffset: Int){
-        array.move(fromOffsets: indices, toOffset: newOffset)
     }
 }
 
