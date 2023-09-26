@@ -12,7 +12,18 @@ struct ContentView: View {
         NavigationStack{
             ListView()
             .navigationTitle("Shopping List")
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading){
+                    EditButton()
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    Button("Add"){
+                        //functionality
+                    }
+                }
+            }
         }
+        .tint(.red)
     }
 }
 
