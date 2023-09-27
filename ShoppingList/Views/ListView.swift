@@ -28,7 +28,7 @@ struct ListView: View {
             ){
                 ForEach(items, id: \.self){item in
                     if(item.category == "fruits"){
-                        ListRow(itemName: item.name,
+                        ListRow(itemName: item.name.capitalized,
                                 itemCount: item.counter)
                     }
                 }
@@ -49,7 +49,7 @@ struct ListView: View {
             ){
                 ForEach(items, id: \.self){item in
                     if(item.category == "vegetables"){
-                        ListRow(itemName: item.name,
+                        ListRow(itemName: item.name.capitalized,
                                 itemCount: item.counter)
                     }
                 }
@@ -70,7 +70,7 @@ struct ListView: View {
             ){
                 ForEach(items, id: \.self){item in
                     if(item.category == "hygiene"){
-                        ListRow(itemName: item.name,
+                        ListRow(itemName: item.name.capitalized,
                                 itemCount: item.counter)
                     }
                 }
