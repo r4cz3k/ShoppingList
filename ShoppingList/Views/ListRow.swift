@@ -10,16 +10,18 @@ import SwiftUI
 struct ListRow: View {
     
     var itemName: String
+    var itemCount: Int
     
     var body: some View {
         HStack{
             Text(itemName)
             Spacer()
-            
+            Text(String(itemCount))
         }
     }
 }
 
 #Preview {
-    ListRow(itemName: "Apple")
+    ListRow(itemName: "Apple", itemCount: 4)
 }
+

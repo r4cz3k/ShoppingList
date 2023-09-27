@@ -11,9 +11,7 @@ struct ListView: View {
     
     let dataService = DataService()
     let listManager = ListManager()
-    @State var fruits:[String] = [String]()
-    @State var vegetables:[String] = [String]()
-    @State var hygiene:[String] = [String]()
+    @State var items: [Item] = [Item]()
     
     init(){
         UITableView.appearance().showsVerticalScrollIndicator = false
@@ -27,21 +25,19 @@ struct ListView: View {
                     Image(systemName: "leaf")
                 }
                     .foregroundStyle(.green)
-                        
             ){
-                if(fruits.count > 0){
-                    ForEach(fruits, id:\.self){fruit in
-                        ListRow(itemName: fruit.capitalized)
+                ForEach(items, id: \.self){item in
+                    if(item.category == "fruits"){
+                        ListRow(itemName: item.name,
+                                itemCount: item.counter)
                     }
-                    .onDelete(perform: { indexSet in
-                        listManager.removeFromList(&fruits, indexSet)
-                    })
-                    .onMove(perform: { indices, newOffset in
-                        listManager.moveInList(&fruits, indices, newOffset)
-                    })
-                }else{
-                    Text("No items added")
                 }
+                .onDelete(perform: { indexSet in
+                    listManager.removeFromList(&items, indexSet)
+                })
+                .onMove(perform: { indices, newOffset in
+                    listManager.moveInList(&items, indices, newOffset)
+                })
             }
             
             Section(
@@ -51,19 +47,18 @@ struct ListView: View {
                 }
                     .foregroundStyle(.orange)
             ){
-                if(vegetables.count > 0){
-                    ForEach(vegetables, id:\.self){vege in
-                        ListRow(itemName: vege.capitalized)
+                ForEach(items, id: \.self){item in
+                    if(item.category == "vegetables"){
+                        ListRow(itemName: item.name,
+                                itemCount: item.counter)
                     }
-                    .onDelete(perform: { indexSet in
-                        listManager.removeFromList(&vegetables, indexSet)
-                    })
-                    .onMove(perform: { indices, newOffset in
-                        listManager.moveInList(&vegetables, indices, newOffset)
-                    })
-                }else{
-                    Text("No items added")
                 }
+                .onDelete(perform: { indexSet in
+                    listManager.removeFromList(&items, indexSet)
+                })
+                .onMove(perform: { indices, newOffset in
+                    listManager.moveInList(&items, indices, newOffset)
+                })
             }
             
             Section(
@@ -73,26 +68,22 @@ struct ListView: View {
                 }
                     .foregroundStyle(.blue)
             ){
-                if(hygiene.count > 0){
-                    ForEach(hygiene, id:\.self){hyg in
-                        ListRow(itemName: hyg.capitalized)
+                ForEach(items, id: \.self){item in
+                    if(item.category == "hygiene"){
+                        ListRow(itemName: item.name,
+                                itemCount: item.counter)
                     }
-                    .onDelete(perform: { indexSet in
-                        listManager.removeFromList(&hygiene, indexSet)
-                    })
-                    .onMove(perform: { indices, newOffset in
-                        listManager.moveInList(&hygiene, indices, newOffset)
-                    })
-                }else{
-                    Text("No items added")
                 }
+                .onDelete(perform: { indexSet in
+                    listManager.removeFromList(&items, indexSet)
+                })
+                .onMove(perform: { indices, newOffset in
+                    listManager.moveInList(&items, indices, newOffset)
+                })
             }
-            
         }
         .onAppear(){
-            fruits = dataService.items[0]
-            vegetables = dataService.items[1]
-            hygiene = dataService.items[2]
+            items = dataService.items
         }
     }
 }
