@@ -21,7 +21,6 @@ struct ListView: View {
     
     var body: some View {
         List{
-            
             ForEach(Array(categories.keys), id: \.self){key in
                 let value = categories[key]
                 
