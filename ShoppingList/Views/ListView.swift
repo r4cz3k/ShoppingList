@@ -19,6 +19,7 @@ struct ListView: View {
     
     var body: some View {
         List{
+            //For Each category and make a dictionary with category name and sf symbol name
             Section(
                 header: HStack{
                     Text("Fruits")

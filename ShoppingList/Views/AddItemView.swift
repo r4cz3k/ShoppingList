@@ -10,10 +10,18 @@ import SwiftUI
 struct AddItemView: View {
     
     @State var dataService = DataService()
+    @State var selectedCategory: String = "fruits"
     @State var itemName: String = String()
     @State var itemCount: String = String()
-    @State var category = itemCategory.fruits
     @Binding var isVisible:Bool
+    
+    enum itemCategory: CaseIterable, Identifiable{
+        case fruits
+        case vegetables
+        case hygiene
+        
+        var id: Self {self}
+    }
     
     var body: some View {
         VStack(alignment: .leading){
@@ -53,10 +61,21 @@ struct AddItemView: View {
                 .foregroundStyle(.black)
                 .font(.headline)
             }
+            Picker(
+                selection: $selectedCategory,
+                label: Text("Picker"),
+                content:{
+                    ForEach(itemCategory.allCases){category in
+                        Text(String(describing: category)).tag(String(describing: category))
+                    }
+                }
+            )
+            .pickerStyle(SegmentedPickerStyle())
             Button{
                 if(textIsValid()){
                     addItem()
                     itemName = String()
+                    itemCount = String()
                 }
             }label:{
                 Text("Save".uppercased())
@@ -80,16 +99,10 @@ struct AddItemView: View {
     
     func addItem(){
         dataService.addItem(name: itemName,
-                            category: String(describing: category),
+                            category: selectedCategory,
                             counter: Int(itemCount) ?? 1)
     }
     
-}
-
-enum itemCategory{
-    case fruits
-    case vegetables
-    case hygiene
 }
 
 #Preview {
