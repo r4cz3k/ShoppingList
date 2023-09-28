@@ -34,7 +34,8 @@ struct DataService{
         "meat" : CategoryInfo("fork.knife", .pink),
         "fish" : CategoryInfo("fish", .cyan),
         "hygiene" : CategoryInfo("shower.handheld", .blue),
-        "pets" : CategoryInfo("pawprint", .brown)
+        "pets" : CategoryInfo("pawprint", .brown),
+        "household items" : CategoryInfo("house", .gray)
     ]
 }
 

@@ -32,6 +32,7 @@ struct ListView: View {
                         .foregroundStyle(value!.color)
                 ){
                     ForEach(items, id: \.self){item in
+                        
                         if(item.category == key){
                             ListRow(itemName: item.name.capitalized,
                                     itemCount: item.counter)
@@ -50,6 +51,7 @@ struct ListView: View {
                                 .tint(.blue)
                             }
                         }
+
                     }
                     .onMove(perform: { indices, newOffset in
                         listManager.moveInList(&items, indices, newOffset)
