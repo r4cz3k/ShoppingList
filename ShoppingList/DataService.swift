@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI //for Color in CategoryInfo
 
 struct DataService{
     var items: [Item] = [
@@ -23,6 +24,18 @@ struct DataService{
     mutating func addItem(name: String, category:String, counter: Int){
         items.append(Item(name: name, category: category, counter: counter))
     }
+    
+    typealias CategoryInfo = (sfName: String, color: Color)
+    
+    var categories:[String: CategoryInfo] = [
+        "fruits" : CategoryInfo("leaf", .green),
+        "vegetables" : CategoryInfo("carrot", .orange),
+        "baking goods" : CategoryInfo("birthday.cake", .yellow),
+        "meat" : CategoryInfo("fork.knife", .pink),
+        "fish" : CategoryInfo("fish", .cyan),
+        "hygiene" : CategoryInfo("shower.handheld", .blue),
+        "pets" : CategoryInfo("pawprint", .brown)
+    ]
 }
 
 struct Item: Hashable{
