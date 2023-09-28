@@ -19,6 +19,10 @@ struct DataService{
     Item(name: "onion",category: "vegetables", counter: 9),
     Item(name: "toothbrush",category: "hygiene", counter: 1),
     ]
+    
+    mutating func addItem(name: String, category:String, counter: Int){
+        items.append(Item(name: name, category: category, counter: counter))
+    }
 }
 
 struct Item: Hashable{

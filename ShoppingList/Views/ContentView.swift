@@ -24,7 +24,7 @@ struct ContentView: View {
                         isPresented = true
                     }
                     .sheet(isPresented: $isPresented, content: {
-                        //Add a sheet with text input and category selection
+                        AddItemView(isVisible: $isPresented)
                     })
                 }
             }
