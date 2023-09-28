@@ -31,6 +31,20 @@ struct ListView: View {
                     if(item.category == "fruits"){
                         ListRow(itemName: item.name.capitalized,
                                 itemCount: item.counter)
+                        .swipeActions(allowsFullSwipe: true) {
+                            
+                            Button(role: .destructive) {
+                                print("Deleting conversation")
+                            } label: {
+                                Label("Delete", systemImage: "trash.fill")
+                            }
+                            Button {
+                                //
+                            } label: {
+                                Label("Edit", systemImage: "pencil.and.scribble")
+                            }
+                            .tint(.blue)
+                        }
                     }
                 }
                 .onDelete(perform: { indexSet in
