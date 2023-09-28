@@ -12,6 +12,7 @@ struct AddItemView: View {
     @State var dataService = DataService()
     @State var itemName: String = String()
     @State var itemCount: String = String()
+    @State var category = itemCategory.fruits
     @Binding var isVisible:Bool
     
     var body: some View {
@@ -79,10 +80,16 @@ struct AddItemView: View {
     
     func addItem(){
         dataService.addItem(name: itemName,
-                            category: "fruits",
+                            category: String(describing: category),
                             counter: Int(itemCount) ?? 1)
     }
     
+}
+
+enum itemCategory{
+    case fruits
+    case vegetables
+    case hygiene
 }
 
 #Preview {
