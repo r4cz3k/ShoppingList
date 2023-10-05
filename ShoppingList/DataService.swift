@@ -1,6 +1,6 @@
 //
 //  DataService.swift
-//  ShoppingListCorrect
+//  ShoppingList
 //
 //  Created by Maciej Rak on 05/10/2023.
 //
